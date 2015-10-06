@@ -20,7 +20,7 @@
     <parent>
         <artifactId>storm</artifactId>
         <groupId>org.apache.storm</groupId>
-        <version>0.9.4</version>
+        <version>0.9.4-CONNEXITY</version>
     </parent>
     <groupId>org.apache.storm</groupId>
     <artifactId>storm-core</artifactId>
@@ -290,6 +290,7 @@
                             <include>org.apache.httpcomponents:http*</include>
                             <include>org.apache.zookeeper:zookeeper</include>
                             <include>org.apache.curator:*</include>
+                            <include>com.googlecode.disruptor:*</include>
                         </includes>
                     </artifactSet>
 
@@ -321,6 +322,10 @@
                         <relocation>
                             <pattern>org.apache.curator</pattern>
                             <shadedPattern>org.apache.storm.curator</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>com.lmax.disruptor</pattern>
+                            <shadedPattern>org.apache.storm.disruptor</shadedPattern>
                         </relocation>
                     </relocations>
                     <transformers>
